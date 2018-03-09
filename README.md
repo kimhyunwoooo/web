@@ -10,13 +10,13 @@
  
 ## job layer
 ### -Markup Technologies
-HTML, CSS, Semantic, Accessibility Specification, RWD, Optimization
+`HTML`, `CSS`, `Semantic`, `Accessibility Specification`, `RWD`, `Optimization`
 
 ### -Etc. Technologies
-Java Script, Jquery, Java Velocity Template, git, IDE, Photoshop, sketch
+`Java Script`, `Jquery`, `Java Velocity Template`, `git`, `IDE`, `Photoshop`, `sketch`
 
 ### -Trends
-Browser, UX, UI, Mobile , Assistive Technology Tools, Analyzing of new feature
+`Browser`, `UX`, `UI`, `Mobile` , `Assistive Technology Tools`, `Analyzing of new feature`
 
 ### -Communications
 Leading of Project, Ability of Decision, Speech, Teaching, Documentation, Filtering(Verification of Code), Snippet Registration
