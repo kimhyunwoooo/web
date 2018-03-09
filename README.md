@@ -9,17 +9,22 @@
  + 15.08.02 ~ 현재 : DK techin ui개발팀 
  
 ## job layer
-### Markup Technologies
+### -Markup Technologies
 HTML, CSS, Semantic, Accessibility Specification, RWD, Optimization
 
-### Etc. Technologies
+### -Etc. Technologies
 Java Script, Jquery, Java Velocity Template, git, IDE, Photoshop, sketch
 
-### Trends
+### -Trends
 Browser, UX, UI, Mobile , Assistive Technology Tools, Analyzing of new feature
 
-### Communications
+### -Communications
 Leading of Project, Ability of Decision, Speech, Teaching, Documentation, Filtering(Verification of Code), Snippet Registration
 
-### Works
+### -Works
 Count of Project progress(Main Service, SPA, promotion, )
+
+## contact
+  + Adress : Mapo-gu, Seoul, Korea
+  + Phone : 010.4103.6677
+  + Email : sleeper0512@naver.com
