@@ -19,10 +19,10 @@
 `Browser`, `UX`, `UI`, `Mobile` , `Assistive Technology Tools`, `Analyzing of new feature`
 
 ### -Communications
-Leading of Project, Ability of Decision, Speech, Teaching, Documentation, Filtering(Verification of Code), Snippet Registration
+`Leading of Project`, `Ability of Decision`, `Speech`, `Teaching`, `Documentation`, `Filtering(Verification of Code)`, `Snippet Registration`
 
 ### -Works
-Count of Project progress(Main Service, SPA, promotion, )
+`Count of Project progress(Main Service, SPA, promotion)`
 
 ## contact
   + Adress : Mapo-gu, Seoul, Korea
