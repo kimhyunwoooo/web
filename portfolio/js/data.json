@@ -1,0 +1,17 @@
+{
+  "project":[{
+    "service":{"name":"kakaoTV","desc":"카카오 동영상 통합 서비스 컨택","img":"images/thumb_kakaotv.jpg","tit":"동영상 통합 서비스 컨택","date":"2016-04 ~ 현재까지","para":"PC web, Mobile web, PC video station, PC biz station","work":"프로젝트 리딩 및 서비스 매니징/HTML,CSS 기여도 100%/interaction UI 및 컴포넌트 개발 서포트/운영 및 유지보수/지속적인 코드 퀄리티 개선","link":{"PC":"https://tv.kakao.com","M":"https://tv.kakao.com","video":"https://tv.kakao.com/station/summary","biz":"https://tv.kakao.com/bizstation/join"}}
+  },{
+    "service":{"name":"Daum game","desc":"구)다음 게임 서비스 컨택","img":"images/thumb_game.jpg","tit":"다음 게임 서비스 컨택","date":"2012-11 ~ 2015-01","para":"PC 게임홈, 검은사막(PC,M), 프로모션 등 서비스 일체","work":"프로젝트 리딩 및 서비스 매니징/HTML,CSS 기여도 100%/interaction UI 및 컴포넌트 개발 서포트/운영 및 유지보수/지속적인 코드 퀄리티 개선","link":{"PC TOP":"http://game.daum.net/","검은사막":"http://black.game.daum.net/black/index.daum"}}
+  },{
+    "service":{"name":"kakao story","desc":"카카오스토리 운영 및 유지보수","img":"images/thumb_kakaostory.jpg","tit":"카카오 스토리 운영및유지보수","date":"2015-05 ~ 2015-12","para":"운영 및 유지보수,부분 스펙 변경 건","work":"업무 프로세스 가이드 개선/HTML,SASS,LESS/운영 및 유지보수","link":{"PC":"https://story.kakao.com/","M":"https://story.kakao.com/"}}
+  },{
+    "service":{"name":"VOD Player","desc":"HTML5 Player component","img":"images/thumb_player.jpg","tit":"HTML5 Player 신규","date":"2016-04 ~ 현재까지","para":"구)TV팟 플레이어 개편 ","work":"프로젝트 리딩 및 서비스 매니징/HTML,CSS 기여도 100%/component 단위 개발 모듈화 작업/운영 및 유지보수","link":{"player":"https://tv.kakao.com/embed/player/cliplink/383227439?service=kakao_tv&autoplay=1&profile=HIGH&wmode=transparent"}}
+  },{
+    "service":{"name":"Daum Movie","desc":"영화서비스 개편 PC,M","img":"images/thumb_movie.jpg","tit":"영화 서비스 개편","date":"2016-01 ~ 2016-04","para":"서비스 전체 개편 - 반응형","work":"프로젝트 전체 리딩/HTML,CSS 기여도 100%/반응형 기반 UI 유관팀 교육/운영 및 유지보수","link":{"PC,M":"http://movie.daum.net/main/new#slide-1-0"}}
+  },{
+    "service":{"name":"Story Funding","desc":"스토리펀딩 프로젝트-반응형","img":"images/thumb_funding.jpg","tit":"스토리 펀딩 신규 프로젝트","date":"2015-01 ~ 2015-05","para":"신규 서비스 오픈 - 반응형","work":"프로젝트 전체 리딩/HTML,CSS 기여도 100%/interaction UI 개발","link":{"PC,M":"https://storyfunding.daum.net/"}}
+  },{
+    "service":{"name":"Local service","desc":"장소,버스,카카오맵 컨택","img":"images/thumb_local.jpg","tit":"구)다음지도,카카오맵,지하철,장소 컨택","date":"2017-01 ~ 2017-12","para":"장소상세 개편 및 운영,유지보수 일체","work":"프로젝트 리딩 및 서비스 매니징/HTML,CSS 기여도 100%/interaction UI 및 컴포넌트 개발 서포트/운영 및 유지보수/지속적인 코드 퀄리티 개선","link":{"PC":"http://place.map.daum.net/10751028","M":"http://m.place.map.daum.net/10751028"}}
+  }]
+}
