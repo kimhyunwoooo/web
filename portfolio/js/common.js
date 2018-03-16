@@ -84,16 +84,16 @@ function viewUpdate() {
 viewUpdate();
 
 //마우스 휠 이벤트
-$('#contents').addClass('page01');
+var $contents = $('#contents');
+$contents.addClass('page01');
 $(window).bind('mousewheel', function(event) {
-    var $contents = $('#contents');
     $contents.attr('class','')
     if (event.originalEvent.wheelDelta >= 0) {
         console.log('Scroll up');
         $contents.addClass('page01');
         $('.box_wrap').removeClass('on');
     }
-    else {  //마우스휠 아래로 돌릴때 이벤트
+    else {
         console.log('Scroll down');
         $contents.addClass('page02');
         $('.box_wrap').addClass('on');
@@ -156,3 +156,41 @@ setInterval (function () {
         t = 0;
     };
 },70);
+
+
+
+
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+
+function hasScrolled() {
+    $contents.attr('class','')
+    var st = $(this).scrollTop();
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    if (st > lastScrollTop){
+    // Scroll Down
+        $contents.addClass('page02');
+        $('.box_wrap').addClass('on');
+    } else {
+    // Scroll Up
+        $contents.addClass('page01');
+        $('.box_wrap').removeClass('on');
+    }
+    lastScrollTop = st;
+
+}
+

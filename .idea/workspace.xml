@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70e41b08-eced-4bba-b70a-c2dab5fae0f8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portfolio/images/laptop_pic1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portfolio/css/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portfolio/font/notokr-demilight.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portfolio/font/notokr-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portfolio/font/notokr-thin.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portfolio/js/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portfolio/js/data.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portfolio/js/imagesloaded.pkgd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portfolio/index.html" afterPath="$PROJECT_DIR$/portfolio/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portfolio/js/common.js" afterPath="$PROJECT_DIR$/portfolio/js/common.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +23,8 @@
           <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/portfolio/js/common.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="87" column="26" lean-forward="false" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="26" />
+                <state relative-caret-position="96">
+                  <caret line="175" column="5" lean-forward="true" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -54,21 +44,21 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/portfolio/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+                <state relative-caret-position="255">
+                  <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/portfolio/css/common.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="88">
-                  <caret line="646" column="5" lean-forward="false" selection-start-line="646" selection-start-column="5" selection-end-line="646" selection-end-column="5" />
+                <state relative-caret-position="122">
+                  <caret line="648" column="17" lean-forward="false" selection-start-line="648" selection-start-column="17" selection-end-line="648" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -109,6 +99,7 @@
       <find>.layer_comm .inner_layer</find>
       <find>.layer_comm .inner_layer`</find>
       <find>.layer_comm .list_detail dt</find>
+      <find>console.log('스크롤 내려')</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,10 +113,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/portfolio/js/common.js" />
         <option value="$PROJECT_DIR$/portfolio/js/data.json" />
         <option value="$PROJECT_DIR$/portfolio/index.html" />
         <option value="$PROJECT_DIR$/portfolio/css/common.css" />
+        <option value="$PROJECT_DIR$/portfolio/js/common.js" />
       </list>
     </option>
   </component>
@@ -817,12 +808,12 @@
       <workItem from="1521038966936" duration="271000" />
       <workItem from="1521039266697" duration="27000" />
       <workItem from="1521039522776" duration="9688000" />
-      <workItem from="1521084133992" duration="42100000" />
+      <workItem from="1521084133992" duration="44503000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84761000" />
+    <option name="totallyTimeSpent" value="87164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="44" y="23" width="1396" height="877" extended-state="6" />
@@ -1088,14 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portfolio/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portfolio/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -1104,10 +1087,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/portfolio/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/portfolio/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="87" column="26" lean-forward="false" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="26" />
+        <state relative-caret-position="96">
+          <caret line="175" column="5" lean-forward="true" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
           <folding />
         </state>
       </provider>
