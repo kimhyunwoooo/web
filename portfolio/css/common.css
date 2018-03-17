@@ -76,10 +76,12 @@ html,body,.wrapper {width:100%;height:100%}
 @keyframes hideScale {
     from {
         opacity:1;
-        transform:scale(1)
+        -ms-transform:scale(1);
+        transform:scale(1);
     }
     to {
         opacity:0;
+        -ms-transform:scale(0.5);
         transform:scale(0.5)
     }
 }
@@ -97,11 +99,13 @@ html,body,.wrapper {width:100%;height:100%}
 @keyframes showScale {
     from {
         opacity: 0;
+        -ms-transform: scale(.8);
         transform: scale(.8)
     }
 
     to {
         opacity: 1;
+        -ms-transform: scale(1);
         transform: scale(1)
     }
 }
@@ -110,12 +114,10 @@ html,body,.wrapper {width:100%;height:100%}
     top:0;left:0;
     width:100%;height:100%;
 }
-.page01 .section01 {
+.page01 .section01,.page02 .section02 {
     z-index:10
 }
-.page02 .section02 {
-    z-index:10
-}
+
 /* section01 */
 .section01 {
     z-index:0;
@@ -128,8 +130,8 @@ html,body,.wrapper {width:100%;height:100%}
     margin-left:-400px;
     z-index:1;
     color:#fff;
-    -webkit-transition:left 400ms ease;
-    transition:left 400ms ease
+    -webkit-transition:.25s;
+    transition:.25s
 }
 .section01 .tit_copy .txt_mCopy {
     display:block;
@@ -142,11 +144,19 @@ html,body,.wrapper {width:100%;height:100%}
     color:#FED700;
     opacity:0
 }
-.page01 .section01 .tit_copy .txt_mCopy {
+.section01 .tit_copy.active .txt_mCopy,.section01 .tit_copy.active .txt_sCopy {
     left:0;
     opacity:1;
+}
+.page02 .section01 .tit_copy.active {
+    opacity:0;
+}
+.section01 .tit_copy.active .txt_mCopy {
     -webkit-transition:all 500ms ease 850ms;
-    transition:all 500ms ease 850ms
+    transition:all 500ms ease 850ms;
+    -webkit-transition-delay: 2s;
+    transition-delay: 2s;
+
 }
 .section01 .tit_copy .txt_sCopy {
     display:block;
@@ -157,18 +167,18 @@ html,body,.wrapper {width:100%;height:100%}
     letter-spacing:-1px;
     opacity:0
 }
-.page01 .section01 .tit_copy .txt_sCopy {
-    left:0;
-    opacity:1;
+.section01 .tit_copy.active .txt_sCopy {
     -webkit-transition:all 500ms ease 900ms;
-    transition:all 500ms ease 900ms
+    transition:all 500ms ease 900ms;
+    -webkit-transition-delay: 2s;
+    transition-delay: 2s;
 }
 
 .section01 > .bg {
     position:absolute;
     top:0;left:0;
     width:100%;height:100%;
-    -webkit-transform:scale(1);
+    -ms-transform:scale(1);
     transform:scale(1);
     opacity:1;
     background:url(../images/laptop_pic1.jpg) no-repeat 50%;background-size:cover;
@@ -195,8 +205,6 @@ html,body,.wrapper {width:100%;height:100%}
     transition:all 600ms cubic-bezier(0, 0.5, 0.5, 1)
 }
 /* section02 */
-.section02 {
-}
 .box_wrap{
     overflow:hidden;
     width:100%;
@@ -211,10 +219,14 @@ html,body,.wrapper {width:100%;height:100%}
     transform-origin:0 0;
 
 }
-.box_comm .list_detail {display:none}
+.box_comm .list_detail {
+    display:none
+}
 .box_wrap.on .box_comm {
     opacity:1;
+    -ms-transform:scale(1) skew(0deg) translate(0px);
     transform:scale(1) skew(0deg) translate(0px);
+    -webkit-transition:all 0.6s;
     transition:all 0.6s;
 }
 
@@ -226,6 +238,7 @@ html,body,.wrapper {width:100%;height:100%}
     height:100%;
     -webkit-transition: .35s;
     transition: .35s;
+    background:rgba(0,0,0,0.5);
 }
 .link_box.active {
     -webkit-animation: hideScale .6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
@@ -248,6 +261,7 @@ html,body,.wrapper {width:100%;height:100%}
     background:rgba(0,0,0,0.5);
     content:'';
     box-shadow:0 0 0 20px rgba(0,0,0,0.5);
+    -webkit-transition:top .35s, bottom .35s, left .35s, right .35s, border 0.35s, background .35s;
     transition:top .35s, bottom .35s, left .35s, right .35s, border 0.35s, background .35s
 }
 
@@ -262,6 +276,7 @@ html,body,.wrapper {width:100%;height:100%}
     line-height:36px;
     color:#fff;
     font-weight:bold;
+    -webkit-transition:.25s;
     transition:.25s;
     text-align:center
 }
@@ -277,6 +292,7 @@ html,body,.wrapper {width:100%;height:100%}
     color:#fff;
     opacity:0;
     text-align:center;
+    -webkit-transition:.25s;
     transition:.25s
 }
 
@@ -324,6 +340,7 @@ html,body,.wrapper {width:100%;height:100%}
     height:50px;
     border:1px solid #fff;
     text-indent:-9999px;
+    -ms-transition:.15s;
     transition:.15s
 }
 .layer_comm .link_close:before,.layer_comm .link_close:after {
@@ -338,9 +355,11 @@ html,body,.wrapper {width:100%;height:100%}
     content:''
 }
 .layer_comm .link_close:before {
+    -ms-transform:rotate(45deg);
     transform:rotate(45deg)
 }
 .layer_comm .link_close:after {
+    -ms-transform:rotate(-45deg);
     transform:rotate(-45deg)
 }
 .layer_comm .link_close:hover,.layer_comm .link_close:hover {
@@ -356,10 +375,18 @@ html,body,.wrapper {width:100%;height:100%}
     width:100%;
     height:476px
 }
+.layer_comm .thumb_layer {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:auto
+}
 .layer_comm .desc_box {
     position:absolute;
     top:0;
     right:-200px;
+    z-index:10;
     opacity:0;
     width:563px;
     height:476px;
@@ -446,13 +473,14 @@ html,body,.wrapper {width:100%;height:100%}
     width: 40px;
     height: 70px;
     margin-left: -20px;
-    bottom: 10%;
+    bottom: 5%;
     margin-top: -35px;
     -webkit-box-shadow: inset 0 0 0 2px #fff;
     box-shadow: inset 0 0 0 2px #fff;
     border-radius: 25px;
 }
 .page02 .ico_scroll {
+    -ms-transform:rotate(180deg);
     transform:rotate(180deg)
 }
 .ico_scroll:before {
@@ -499,11 +527,13 @@ html,body,.wrapper {width:100%;height:100%}
         margin-top:-36px;
         font-weight:bold;
         text-shadow:2px 2px 2px rgba(0,0,0,0.24);
+        -webkit-transition:.25s;
         transition:.25s
     }
     .link_box:hover .txt_service {
         opacity:1;
         margin-top:4px;
+        -webkit-transition:.25s;
         transition:.25s
     }
     .link_box:hover:before {
@@ -514,9 +544,11 @@ html,body,.wrapper {width:100%;height:100%}
         border:2px solid #fff;
         background:rgba(0,0,0,0.8);
         box-shadow:0 0 0 15px rgba(0,0,0,0.1);
+        -webkit-transition:.35s;
         transition:.35s
     }
     .box_comm {
+        -ms-transform:scale(1.2, 1) skew(2deg, 8deg) translate(4px, 8px);
         transform:scale(1.2, 1) skew(2deg, 8deg) translate(4px, 8px);
     }
     .box_wrap.on .box_comm.box1 {
@@ -636,14 +668,13 @@ html,body,.wrapper {width:100%;height:100%}
 
     /* scroll */
     .ico_scroll {
-        bottom:8%;
-        -webkit-transform:scale(0.7);
-        transform:scale(0.7);
-    }
-    .page02 .ico_scroll {
         bottom:1%;
         -webkit-transform:scale(0.7) rotate(180deg);
         transform:scale(0.7) rotate(180deg);
+    }
+    .page02 .ico_scroll {
+        -webkit-transform:scale(0.7) rotate(0deg);
+        transform:scale(0.7) rotate(0deg);
     }
     /* layer */
     .layer_comm {
@@ -655,9 +686,6 @@ html,body,.wrapper {width:100%;height:100%}
         height:auto;
         margin:0;
         box-sizing:border-box;
-        background-size:contain;
-        background-position:0 0;
-        background-repeat:no-repeat
     }
     .layer_comm .inner_layer {
         height:100%
@@ -673,13 +701,20 @@ html,body,.wrapper {width:100%;height:100%}
     .layer_comm .link_close:before, .layer_comm .link_close:after {
         background:#000
     }
+    .layer_comm .thumb_layer {
+        box-shadow:0 2px 8px rgba(0,0,0,0.30);
+    }
     .layer_comm .desc_box {
         top:initial;
         bottom:0;
         width:100%;
         height:auto;
         background:#fff;
-        box-shadow:0 -1px 8px rgba(0,0,0,0.20)
+        background: rgba(255,255,255,0);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(4%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 4%, rgba(255,255,255,1) 100%);
+        background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 4%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 4%, rgba(255,255,255,1) 100%);
     }
     .layer_comm .vertical_box {
         display:block;
@@ -698,11 +733,34 @@ html,body,.wrapper {width:100%;height:100%}
         font-size:13px
     }
 }
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5),
-only screen and (min-resolution: 144dpi),
-only screen and (min-resolution: 1.5dppx) {
-
+/* progress bar */
+.progress {
+    background-color: #000;
+    color: #FED700;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index:9999;
+}
+.progress-bar {
+    border-top:1px solid #FED700;
+    position: absolute;
+    top: 50%;
+    width: 0%;
+}
+.progress-bar.progress-complete {
+    border-top-color: #FED700;
+}
+.progress-line {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    margin-top:-21px;
+}
+.progress-text{
+    display:inline-block;
+    padding:0 15px;
+    background:#000
 }

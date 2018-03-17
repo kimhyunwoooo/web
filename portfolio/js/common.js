@@ -7,11 +7,11 @@ function viewUpdate() {
         error: function () {
             console.log('실패')
         },
-        success: function (data) { //데이터 성공적으로 요청되었을 때...
+        success: function (data) {
 
             var boxItemHtml =
                 '<a href="#none" class="link_box">' +
-                '<span class="thumb_img"></span>' +
+                '<span class="thumb_img" data-url=""></span>' +
                 '<strong class="tit_service"></strong>' +
                 '<p class="txt_service"></p>' +
                 '</a>' +
@@ -57,16 +57,16 @@ function viewUpdate() {
                 var linkProject = $(this).find('.link_item');
                 var serviceImg = data.project[i].service.img;
                 var serviceName = data.project[i].service.name;
-                var serviceDese = data.project[i].service.desc;
+                var serviceDesc = data.project[i].service.desc;
                 var serviceTit = data.project[i].service.tit;
                 var serviceDate = data.project[i].service.date;
                 var servicePara = data.project[i].service.para;
                 var serviceWork = data.project[i].service.work.split("/").reverse();
                 var serviceLinkList = Object.keys(data.project[i].service.link)
                 var serviceLinkUrl = Object.values(data.project[i].service.link)
-                imgUrl.attr('style', 'background-image:url(' + serviceImg + ')');
+                imgUrl.attr('style', 'background-image:url(' + serviceImg + ')').attr( "data-url",serviceImg);
                 titName.text(serviceName);
-                subText.text(serviceDese);
+                subText.text(serviceDesc);
                 titProject.after('<dd>'+serviceTit+'</dd>');
                 dateProject.after('<dd>'+serviceDate+'</dd>');
                 descProject.after('<dd>'+servicePara+'</dd>');
@@ -78,28 +78,94 @@ function viewUpdate() {
                     linkProject.append(linkUrl);
                 }
             });
+
+            //레이어 연동
+            console.log('wheel')
+            var $itemBox = $('.link_box');
+            var $layerImg = $('.thumb_layer');
+            var $layerDimmed = $('.dimmed_layer');
+            var $layerBox = $('.layer_comm');
+            var $layerClose = $('.layer_comm .link_close');
+            var $layerCont = $('.vertical_box');
+            //레이어 함수
+            function layerClose(){
+                $itemBox.removeClass('active');
+                $layerDimmed.removeClass('show');
+                $layerBox.removeClass('show');
+            }
+            function layerOpen(){
+                $layerDimmed.addClass('show');
+                $layerBox.addClass('show');
+            }
+            $itemBox.click(function(){
+                $layerCont.children().remove();
+                var imgUrl = $(this).find('.thumb_img').attr('data-url')
+                $layerImg.attr('src',imgUrl)
+
+                var contLayer = $(this).next('.list_detail').clone();
+                $layerCont.append(contLayer)
+                $(this).addClass('active');
+                layerOpen();
+            });
+            $layerClose.click(function(){
+                layerClose();
+            });
+            $layerDimmed.click(function(){
+                layerClose();
+            });
         }
     });
 }
 viewUpdate();
 
-//마우스 휠 이벤트
-var $contents = $('#contents');
-$contents.addClass('page01');
-$(window).bind('mousewheel', function(event) {
-    $contents.attr('class','')
-    if (event.originalEvent.wheelDelta >= 0) {
-        console.log('Scroll up');
-        $contents.addClass('page01');
-        $('.box_wrap').removeClass('on');
-    }
-    else {
-        console.log('Scroll down');
-        $contents.addClass('page02');
-        $('.box_wrap').addClass('on');
-    }
-});
 
+//마우스 휠 이벤트
+function wheelEvent(){
+    var $contents = $('#contents');
+    $contents.addClass('page01');
+    $(window).bind('mousewheel', function(event) {
+        $contents.attr('class','')
+        if (event.originalEvent.wheelDelta >= 0) {
+            console.log('Scroll up');
+            $contents.addClass('page01');
+            $('.box_wrap').removeClass('on');
+        }
+        else {
+            console.log('Scroll down');
+            $contents.addClass('page02');
+            $('.box_wrap').addClass('on');
+        }
+    });
+    //모바일 터치 이벤트
+    $(window).bind('touchstart', touchstart);
+    function touchstart(event) {
+        var touches = event.originalEvent.touches;
+        if (touches && touches.length) {
+            startY = touches[0].pageY;
+            $(window).bind('touchmove', touchmove);
+        }
+    }
+    function touchmove(event) {
+        var touches = event.originalEvent.touches;
+        if (touches && touches.length) {
+            var deltaY = startY - touches[0].pageY;
+
+            if (deltaY >= 50) {
+                console.log("swipeUp");
+                $contents.attr('class','').addClass('page02')
+                $('.box_wrap').addClass('on');
+            }
+            if (deltaY <= -50) {
+                console.log("swipeDown");
+                $contents.attr('class','').addClass('page01')
+                $('.box_wrap').removeClass('on');
+            }
+            if (Math.abs(deltaY) >= 50) {
+                $(window).unbind('touchmove', touchmove);
+            }
+        }
+    }
+};
 
 //박스 배경 랜덤값
 var $box = $('.box_comm');
@@ -109,38 +175,7 @@ $box.each(function(){
 });
 //박스 클릭 모션
 $(window).load(function(){
-    var $itemBox = $('.link_box');
-    var $layerDimmed = $('.dimmed_layer');
-    var $layerBox = $('.layer_comm');
-    var $layerClose = $('.layer_comm .link_close');
-    var $layerCont = $('.vertical_box');
-    //레이어 함수
-    function layerClose(){
-        $itemBox.removeClass('active');
-        $layerDimmed.removeClass('show');
-        $layerBox.removeClass('show');
-    }
-    function layerOpen(){
-        $layerDimmed.addClass('show');
-        $layerBox.addClass('show');
-    }
-    $itemBox.click(function(){
-        $layerCont.children().remove();
-        var imgUrl = $(this).find('.thumb_img').attr('style');
-        $layerBox.attr('style',imgUrl)
 
-        var contLayer = $(this).next('.list_detail').clone();
-        console.log(contLayer)
-        $layerCont.append(contLayer)
-        $(this).addClass('active');
-        layerOpen();
-    });
-    $layerClose.click(function(){
-        layerClose();
-    });
-    $layerDimmed.click(function(){
-        layerClose();
-    });
 
 })
 //텍스트 효과
@@ -157,40 +192,37 @@ setInterval (function () {
     };
 },70);
 
+imagesProgress();
+/* 로딩 스크립트 함수 */
+function imagesProgress() {
+    var $container = $('#progress'),
+        $progressBar = $container.find('.progress-bar'),
+        $progressText = $container.find('.progress-text'),
+        imgLoad = imagesLoaded('body'),
+        imgTotal = imgLoad.images.length,
+        imgLoaded = 0,
+        current = 0,
+        progressTimer = setInterval(updateProgress, 1000 / 60);
+    imgLoad.on('progress', function () {
+        imgLoaded++;
+    });
+    function updateProgress() {
+        var target = (imgLoaded / imgTotal) * 100;
+        current += (target - current) * 0.1;
+        $progressBar.css({width: current + '%'});
+        $progressText.text(Math.floor(current) + '%');
+        if (current >= 100) {
+            clearInterval(progressTimer);
+            $container.addClass('progress-complete');
+            $progressBar.add($progressText).delay(500).animate({opacity: 0}, 250, function () {
+                $container.animate({top: '-100%'}, 600);
+            });
 
-
-
-var didScroll;
-var lastScrollTop = 0;
-var delta = 5;
-
-$(window).scroll(function(event){
-    didScroll = true;
-});
-
-setInterval(function() {
-    if (didScroll) {
-        hasScrolled();
-        didScroll = false;
-    }
-}, 250);
-
-
-function hasScrolled() {
-    $contents.attr('class','')
-    var st = $(this).scrollTop();
-    if(Math.abs(lastScrollTop - st) <= delta)
-        return;
-    if (st > lastScrollTop){
-    // Scroll Down
-        $contents.addClass('page02');
-        $('.box_wrap').addClass('on');
-    } else {
-    // Scroll Up
-        $contents.addClass('page01');
-        $('.box_wrap').removeClass('on');
-    }
-    lastScrollTop = st;
-
-}
-
+        };
+        if (current > 99.9) {
+            current = 100;
+            wheelEvent();
+            $('.tit_copy').addClass('active');
+        };
+    };
+};
