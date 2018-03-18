@@ -62,8 +62,11 @@ function viewUpdate() {
                 var serviceDate = data.project[i].service.date;
                 var servicePara = data.project[i].service.para;
                 var serviceWork = data.project[i].service.work.split("/").reverse();
-                var serviceLinkList = Object.keys(data.project[i].service.link)
-                var serviceLinkUrl = Object.values(data.project[i].service.link)
+                var servicelinkObj = data.project[i].service.link;
+                for (key in servicelinkObj) {
+                    var linkUrl = '<a class="link_url" target="_blank" href="'+ servicelinkObj[key] +'">'+ key +'</a>'
+                    linkProject.append(linkUrl);
+                }
                 imgUrl.attr('style', 'background-image:url(' + serviceImg + ')').attr( "data-url",serviceImg);
                 titName.text(serviceName);
                 subText.text(serviceDesc);
@@ -73,10 +76,6 @@ function viewUpdate() {
                 for (var i = 0; i < serviceWork.length; i++){
                     workProject.after('<dd>'+serviceWork[i]+'</dd>');
                 };
-                for (var i = 0; i < serviceLinkList.length; i++){
-                    var linkUrl = '<a class="link_url" target="_blank" href="'+ serviceLinkUrl[i] +'">'+ serviceLinkList[i] +'</a>'
-                    linkProject.append(linkUrl);
-                }
             });
 
             //레이어 연동
